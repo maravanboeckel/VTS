@@ -47,17 +47,17 @@ st_plotly_chart(fig)
 if rad == 'Kaart':
           def scheef(scheefstand):
            if  abs(scheefstand) >= 1 and scheefstand <3:
-                      color = 'orange'
+                    color = 'orange'
                     return color
           elif abs(scheefstand) >= 3 and scheefstand < 6:
-                     color='red'
+                    color='red'
                     return color
           elif abs(scheefstand) >=6:
-                      color = 'darkred'
-                      return color
+                     color = 'darkred'
+                     return color
           else:
-                      color = 'green'
-                      return color
+                     color = 'green'
+                     return color
 
 
 # In[ ]:
