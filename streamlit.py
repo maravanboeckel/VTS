@@ -32,7 +32,7 @@ st.sidebar.markdown('#')
 
 # In[ ]:
 if rad == 'Grafiek':
-         st.title('Kaart met scheefstand lantaarnpalen in Houten')
+         st.title('Grafiek')
 # fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
 #       "value": "Scheefstand (graden)", 'variable':''},
 #        title='Scheefstand waterpas en algoritme')
@@ -54,3 +54,16 @@ if rad == 'Kaart':
                            color = 'green'
                            return color
                   
+         def scheef1(scheefstand_tov_kader):
+                  if  abs(scheefstand_tov_kader) >= 1 and scheefstand_tov_kader <3:
+                           color = 'orange'
+                           return color
+                  elif abs(scheefstand_tov_kader) >= 3 and scheefstand_tov_kader < 6:
+                           color='red'
+                           return color
+                  elif abs(scheefstand_tov_kader) >=6:
+                           color = 'darkred'
+                           return color
+                  else:
+                           color = 'green'
+                           return color  
