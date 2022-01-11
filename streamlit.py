@@ -8,7 +8,7 @@ import pandas as pd
 import folium
 import streamlit as st
 from streamlit_folium import folium_static
-
+import plotly.express as px
 
 
 
@@ -33,6 +33,14 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
 # In[ ]:
+
+fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
+            "value": "Scheefstand (graden)", 'variable':''},
+            title='Scheefstand waterpas en algoritme')
+
+
+fig.show()
+
 
 
 def scheef(scheefstand):
