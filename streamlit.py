@@ -36,7 +36,7 @@ if rad == 'Grafiek':
          fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
                   "value": "Scheefstand (graden)", 'variable':''},
                        title='Scheefstand waterpas en algoritme')
-         st.plotly_chart(fig)
+         st.plotly_chart(fig,use_container_width=True)
 
 #In[ ]:
 if rad == 'Kaart':
