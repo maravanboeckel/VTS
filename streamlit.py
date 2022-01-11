@@ -17,7 +17,7 @@ import plotly.express as px
 
 # In[ ]:
 
-#st.title('Kaart met scheefstand lantaarnpalen in Houten')
+#
 
 vergelijk1=pd.read_csv('Data_kaart.csv')
 #st.set_page_config(layout="wide")
@@ -31,12 +31,26 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
 # In[ ]:
-#if rad == 'Grafiek':
-fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
-      "value": "Scheefstand (graden)", 'variable':''},
-       title='Scheefstand waterpas en algoritme')
-st_plotly_line(fig)
+if rad == 'Grafiek':
+         st.title('Kaart met scheefstand lantaarnpalen in Houten')
+# fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
+#       "value": "Scheefstand (graden)", 'variable':''},
+#        title='Scheefstand waterpas en algoritme')
+# st_plotly_chart(fig)
 
 #In[ ]:
-#if rad == 'Kaart':
-         
+if rad == 'Kaart':
+         def scheef(scheefstand):
+        if  abs(scheefstand) >= 1 and scheefstand <3:
+            color = 'orange'
+            return color
+        elif abs(scheefstand) >= 3 and scheefstand < 6:
+            color='red'
+            return color
+        elif abs(scheefstand) >=6:
+            color = 'darkred'
+            return color
+        else:
+            color = 'green'
+            return color
+                  
