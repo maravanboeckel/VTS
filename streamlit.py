@@ -21,7 +21,7 @@ from streamlit_folium import folium_static
 
 # In[ ]:
 
-
+st.title('Kaart van Houten')
 vergelijk1=pd.read_csv('Data_kaart.csv')
 
 
