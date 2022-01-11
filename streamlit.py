@@ -43,6 +43,7 @@ if rad == 'Grafiek':
 
 st_plotly_chart(fig)
 
+# In[ ]:
 
 if rad == 'Kaart':
           def scheef(scheefstand):
