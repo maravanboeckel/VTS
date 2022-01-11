@@ -81,11 +81,7 @@ if rad == 'Kaart':
 # In[ ]:
 
           
-         
-# Toevoegen van een categorische legenda
-# (bron: https://stackoverflow.com/questions/65042654/how-to-add-categorical-legend-to-python-folium-map)
-
-          def add_categorical_legend(folium_map, title, colors, labels):
+           def add_categorical_legend(folium_map, title, colors, labels):
               if len(colors) != len(labels):
                   raise ValueError("colors and labels must have the same length.")
 
@@ -188,9 +184,7 @@ if rad == 'Kaart':
 
                               
  # In[ ]:
-
-
-               map_houten= folium.Map(location=[52.015154,5.171879], zoom_start = 15)
+          map_houten= folium.Map(location=[52.015154,5.171879], zoom_start = 15)
                tooltip = "Klik voor informatie"
 
                data=['Scheefstand electronische waterpas', 'Scheefstand algoritme']
