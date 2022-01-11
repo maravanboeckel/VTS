@@ -184,7 +184,7 @@ if rad == 'Kaart':
 
                         folium_map.get_root().header.add_child(folium.Element(script + css))
 
-                        return folium_static(folium_map)
+                        return folium_map
 
 
                     # In[ ]:
