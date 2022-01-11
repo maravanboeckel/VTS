@@ -32,9 +32,9 @@ st.sidebar.markdown('#')
 
 # In[ ]:
 #if rad == 'Grafiek':
-          fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
-            "value": "Scheefstand (graden)", 'variable':''},
-            title='Scheefstand waterpas en algoritme')
+fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
+      "value": "Scheefstand (graden)", 'variable':''},
+       title='Scheefstand waterpas en algoritme')
 
 
 st_plotly_chart(fig)
