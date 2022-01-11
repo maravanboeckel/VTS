@@ -79,9 +79,6 @@ if rad == 'Kaart':
                       return color
 
 
-# In[ ]:
-
-
 
 
                     # Toevoegen van een categorische legenda
