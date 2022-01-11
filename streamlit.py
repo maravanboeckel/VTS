@@ -20,8 +20,8 @@ import plotly.express as px
 #
 
 vergelijk1=pd.read_csv('Data_kaart.csv')
-#st.set_page_config(layout="wide")
-#rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
+st.set_page_config(layout="wide")
+rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
