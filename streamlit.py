@@ -17,7 +17,7 @@ import plotly.express as px
 
 # In[ ]:
 
-st.title('Kaart met scheefstand lantaarnpalen in Houten')
+#st.title('Kaart met scheefstand lantaarnpalen in Houten')
 
 vergelijk1=pd.read_csv('Data_kaart.csv')
 #st.set_page_config(layout="wide")
