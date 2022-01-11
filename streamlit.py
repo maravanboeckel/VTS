@@ -89,7 +89,7 @@ if rad == 'Kaart':
                     for label, color in color_by_label.items():
                     legend_categories += f"<li><span style='background:{color}'></span>{label}</li>"
 
-                        legend_html = f"""
+                     legend_html = f"""
                         <div id='maplegend' class='maplegend'>
                           <div class='legend-title'>{title}</div>
                           <div class='legend-scale'>
