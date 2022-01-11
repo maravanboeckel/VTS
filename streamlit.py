@@ -24,6 +24,11 @@ from streamlit_folium import folium_static
 st.title('Kaart met scheefstand lantaarnpalen in Houten')
 vergelijk1=pd.read_csv('Data_kaart.csv')
 
+st.sidebar.subheader('Gemaakt door:')
+st.sidebar.write('Mara van Boeckel')
+st.sidebar.write('Lisa Mulder')
+st.sidebar.write('Rhode Rebel')
+
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
