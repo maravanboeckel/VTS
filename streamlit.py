@@ -40,7 +40,7 @@ if rad == 'Grafiek':
 
 #In[ ]:
 if rad == 'Kaart':
-         st.title('Kaartvan (scheve) lantaarnpalen in Houten')
+         st.title('Kaart van (scheve) lantaarnpalen in Houten')
          def scheef(scheefstand):
                   if  abs(scheefstand) >= 1 and scheefstand <3:
                            color = 'orange'
