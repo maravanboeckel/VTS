@@ -25,7 +25,7 @@ st.title('Kaart met scheefstand lantaarnpalen in Houten')
 
 vergelijk1=pd.read_csv('Data_kaart.csv')
 st.set_page_config(layout="wide")
-rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
+rad = st.sidebar.radio(options=('Grafiek'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
