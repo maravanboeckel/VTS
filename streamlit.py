@@ -22,7 +22,7 @@ from streamlit_folium import folium_static
 # In[ ]:
 
 
-pd.read_csv('Data_kaart.csv')
+vergelijk1=pd.read_csv('Data_kaart.csv')
 
 
 # In[ ]:
