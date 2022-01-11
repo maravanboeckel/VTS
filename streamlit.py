@@ -71,7 +71,7 @@ if rad == 'Kaart':
         
          def add_categorical_legend(folium_map, title, colors, labels):
                   if len(colors) != len(labels):
-                  raise ValueError("colors and labels must have the same length.")
+                           raise ValueError("colors and labels must have the same length.")
 
                   color_by_label = dict(zip(labels, colors))
     
