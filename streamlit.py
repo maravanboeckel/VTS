@@ -21,9 +21,11 @@ from streamlit_folium import folium_static
 
 # In[ ]:
 
-st.title('Kaart van Houten')
+st.title('Kaart met scheefstand lantaarnpalen in Houten')
 vergelijk1=pd.read_csv('Data_kaart.csv')
 
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
 
 # In[ ]:
 
