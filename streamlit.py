@@ -313,4 +313,4 @@ for row in vergelijk1.iterrows():
     
 folium.LayerControl(position='topleft').add_to(map_houten)
 map_houten.get_root().add_child(legend)
-folium_static(map_houten, width = 1200, height = 700)
+folium_static(map_houten)
