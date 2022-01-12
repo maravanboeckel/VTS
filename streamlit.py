@@ -402,3 +402,4 @@ if rad == 'Kaart':
                                colors=['darkred','red', 'orange', 'green'],
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
     folium_static(map_houten)
+#test
