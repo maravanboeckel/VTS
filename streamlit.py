@@ -251,8 +251,8 @@ legend_html = '''
 {% macro html(this, kwargs) %}
 <div style="
     position: relative; 
-    bottom: 280px;
-    left: 440px;
+    bottom: 50%;
+    left: 50%;
     width: 250px;
     height: 80px;
     z-index:9999;
@@ -265,8 +265,8 @@ legend_html = '''
 </div>
 <div style="
     position: relative; 
-    bottom: 200px;
-    left: 440px;
+    bottom: 50%;
+    left: 50%;
     width: 150px;
     height: 160px; 
     z-index:9998;
