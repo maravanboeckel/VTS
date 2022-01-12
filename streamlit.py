@@ -382,3 +382,4 @@ legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
     
 folium.LayerControl(position='topleft').add_to(map_houten)
 folium_static(map_houten)
+folium_static(legend_houten)
