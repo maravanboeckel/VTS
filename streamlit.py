@@ -200,9 +200,9 @@ if rad == 'Kaart':
                   marker.add_to(effecten[1])
                   effecten[1].add_to(map_houten)
     
-#map_houten = add_categorical_legend(map_houten, 'Scheefstand',
-#                            colors=['darkred','red', 'orange', 'green'],
-#                            labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])   
+         map_houten = add_categorical_legend(map_houten, 'Scheefstand',
+                                             colors=['darkred','red', 'orange', 'green'],
+                                             labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])   
     
          folium.LayerControl(position='topleft').add_to(map_houten)
          folium_static(map_houten)
