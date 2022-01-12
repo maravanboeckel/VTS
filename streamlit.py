@@ -300,7 +300,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
         border: 2px solid #bbb;
         padding: 10px;
         font-size:12px;
-        positon: relative;
+        positon: left;
       }
       .maplegend .legend-title {
         text-align: left;
