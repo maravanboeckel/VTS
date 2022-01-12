@@ -203,5 +203,5 @@ if rad == 'Grafiek':
          st.plotly_chart(fig,use_container_width=True)
 
 #In[ ]:
-if rad == 'Kaart':
+#if rad == 'Kaart':
          
