@@ -342,7 +342,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
     </style>
     """
 
-    folium_map.get_root().header.add_child(folium.Element(script + css))
+    folium_map.get_root().html.add_child(folium.Element(script + css))
 
     return folium_map
 
