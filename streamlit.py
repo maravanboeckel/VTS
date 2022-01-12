@@ -342,7 +342,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
     </style>
     """
 
-    folium_map.get_root().header.add_child(folium.Element(script + css))
+    folium_map.get_root().add_child(folium.Element(script + css))
 
     return folium_map
 
@@ -379,8 +379,6 @@ for row in vergelijk1.iterrows():
 legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
                            colors=['darkred','red', 'orange', 'green'],
                            labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])  
-
-st.markdown(legend_houten, unsafe_allow_html=True)
     
 folium.LayerControl(position='topleft').add_to(map_houten)
 folium_static(map_houten)
