@@ -346,7 +346,7 @@ def add_categorical_legend(folium_map, title, colors, labels):
 
     return folium_map
 
-map_houten= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
+map_houten= folium.Map(location=[52.015154,5.171879], zoom_start = 15)
 tooltip = "Klik voor informatie"
 
 data=['Scheefstand electronische waterpas', 'Scheefstand algoritme']
@@ -380,5 +380,5 @@ legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
                            colors=['darkred','red', 'orange', 'green'],
                            labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])   
     
-folium.LayerControl(position='topleft').add_to(map_houten)
+#folium.LayerControl(position='topleft').add_to(map_houten)
 folium_static(map_houten)
