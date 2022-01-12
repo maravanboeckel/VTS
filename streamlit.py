@@ -281,7 +281,7 @@ legend_html = '''
 legend = branca.element.MacroElement()
 legend._template = branca.element.Template(legend_html)
 
-map_houten= folium.Map(location=[52.015154,5.171879], zoom_start = 15)
+map_houten= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
 tooltip = "Klik voor informatie"
 
 data=['Scheefstand electronische waterpas', 'Scheefstand algoritme']
@@ -313,5 +313,4 @@ for row in vergelijk1.iterrows():
     
 folium.LayerControl(position='topleft').add_to(map_houten)
 map_houten.get_root().add_child(legend)
-st.markdown(legend, unsafe_allow_html=True)
 folium_static(map_houten, width = 1200, height = 700)
