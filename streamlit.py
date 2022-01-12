@@ -250,7 +250,7 @@ def scheef1(scheefstand_tov_kader):
 legend_html = '''
 {% macro html(this, kwargs) %}
 <div style="
-    position: fixed; 
+    position: relative; 
     bottom: 280px;
     left: 440px;
     width: 250px;
@@ -264,7 +264,7 @@ legend_html = '''
     <p><a style="color:#008000;font-size:150%;margin-left:20px;">&#9632;</a>&emsp;Minder dan 1°</p>
 </div>
 <div style="
-    position: fixed; 
+    position: relative; 
     bottom: 200px;
     left: 440px;
     width: 150px;
