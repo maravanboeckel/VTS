@@ -21,7 +21,8 @@ st.sidebar.markdown('#')
 vergelijk1=pd.read_csv('Data_kaart.csv')
 
 if rad == 'Grafiek':
-    st.title('Grafiek van de scheefstanden (waterpas en het algoritme)')
+    st.title('Grafiek van de scheefstanden')
+    st.subheader('De linker kaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
     fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
         "value": "Scheefstand (graden)", 'variable':''},
                   title='Scheefstand waterpas en algoritme')
