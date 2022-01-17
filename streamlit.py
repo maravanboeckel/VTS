@@ -22,7 +22,7 @@ vergelijk1=pd.read_csv('Data_kaart.csv')
 
 if rad == 'Grafiek':
     st.title('Grafiek van de scheefstanden')
-    st.subheader('De linker kaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
+  
     fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
         "value": "Scheefstand (graden)", 'variable':''},
                   title='Scheefstand waterpas en algoritme')
@@ -30,7 +30,8 @@ if rad == 'Grafiek':
 
 if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
-
+    st.subheader('De linker kaart geeft de scheefstanden van de elektronische waterpas, de rechter van het algoritme')
+    
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
             color = 'orange'
