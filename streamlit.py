@@ -27,6 +27,8 @@ if rad == 'Grafiek':
         "value": "Scheefstand (graden)", 'variable':''},
                   title='Scheefstand waterpas en algoritme')
     st.plotly_chart(fig,use_container_width=True)
+    
+    'NOG NIET COMPLEET'
 
 if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
