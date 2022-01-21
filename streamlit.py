@@ -33,6 +33,10 @@ st.sidebar.write('Rhodé Rebel')
 
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
 
 Houten=pd.read_csv('Houten.csv')
 if rad == 'Home':
