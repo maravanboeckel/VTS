@@ -6,7 +6,6 @@ import folium
 import streamlit as st
 from streamlit_folium import folium_static
 import plotly.express as px
-import branca
 
 st.set_page_config(layout="wide")
 rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
