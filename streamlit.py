@@ -36,6 +36,8 @@ st.sidebar.markdown('#')
 Houten=pd.read_csv('Houten.csv')
 
 if rad == 'Grafiek':
+    st.header('Grafiek van de scheefstanden')
+    'Het is mogelijk om de grafiek in te zoomen'
     fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
               title='Scheefstand per lantaarnpaal gemeten met de waterpas en het algoritme', 
