@@ -31,7 +31,7 @@ if rad == 'Grafiek':
 
 if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
-    st.subheader('Elektronische waterpas                                           Algoritme')
+    st.subheader('----- Elektronische waterpas ------------ Algoritme -----')
     
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
