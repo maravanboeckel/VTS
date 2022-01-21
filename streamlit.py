@@ -17,12 +17,12 @@ st.sidebar.write('Rhode Rebel')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
-vergelijk1=pd.read_csv('Data_kaart.csv')
+Houten=pd.read_csv('Data_kaart.csv')
 
 if rad == 'Grafiek':
     st.title('Grafiek van de scheefstanden')
   
-    fig = px.line(vergelijk1, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
+    fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
         "value": "Scheefstand (graden)", 'variable':''},
                   title='Scheefstand waterpas en algoritme')
     st.plotly_chart(fig,use_container_width=True)
@@ -167,32 +167,32 @@ if rad == 'Kaart':
     map_houten= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
     tooltip = "Klik voor informatie"
 
-    data=['Scheefstand electronische waterpas', 'Scheefstand algoritme']
+    waterpas= folium.FeatureGroup(name='Scheefstand elektronische waterpas',show=False)
+    algoritme= folium.FeatureGroup(name='Scheefstand algoritme',show=True)
 
-    effecten = [folium.FeatureGroup(name=x)for x in data]
 
-    for row in vergelijk1.iterrows():
+    for row in Houten.iterrows():
         row_values = row[1]
-        location = [row_values['lat_x'], row_values['lon_x']]
-        popup = (' •Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
-                 '•Scheefstand: '+ str(round(row_values['scheefstand'],2))+'°'+'</strong>'+'<br>'+'<br>'+
-                '•Lat, lon: '+str(row_values['lat_x'])+',' + '<br>' + str(row_values['lon_x'])    )
+        location = [row_values['lat'], row_values['lon']]
+        popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+                 'Scheefstand: '+ str(round(row_values['scheefstand'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+                'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])    )
 
         marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef(row_values['scheefstand']), fill_color=scheef(row_values['scheefstand']))
-        marker.add_to(effecten[0])
-        effecten[0].add_to(map_houten.m1)
+        marker.add_to(waterpas)
+        waterpas.add_to(map_houten.m1)
 
 
-    for row in vergelijk1.iterrows():
+    for row in Houten.iterrows():
         row_values = row[1]
-        location = [row_values['lat_x'], row_values['lon_x']]
-        popup = (' •Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
-                 '•Scheefstand: '+ str(round(row_values['scheefstand_tov_kader'],2))+'°'+'</strong>'+'<br>'+'<br>'+
-                '•Lat, lon: '+str(row_values['lat_x'])+',' + '<br>' + str(row_values['lon_x'])   )
+        location = [row_values['lat'], row_values['lon']]
+        popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+                 'Scheefstand: '+ str(round(row_values['scheefstand_tov_kader'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+                'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])   )
 
         marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef(row_values['scheefstand_tov_kader']))
-        marker.add_to(effecten[1])
-        effecten[1].add_to(map_houten.m2)
+        marker.add_to(algoritme)
+        algoritme.add_to(map_houten.m2)
 
     #folium.LayerControl(position='topleft').add_to(map_houten)
     legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
