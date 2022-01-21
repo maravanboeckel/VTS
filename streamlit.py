@@ -60,7 +60,7 @@ if rad == 'Grafiek':
     'Het is mogelijk om de grafiek in te zoomen.'
     fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
-              title='Scheefstand per lantaarnpaal gemeten met de waterpas en het algoritme', 
+              title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme', 
               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
     fig.update_layout(plot_bgcolor='#f0f1f1')
 
@@ -72,7 +72,7 @@ if rad == 'Grafiek':
     st.plotly_chart(fig,use_container_width=True)
     
 if rad == 'Distributie':
-    st.header('...')
+    st.header('Distributie van de scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
 
     fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
@@ -89,7 +89,7 @@ if rad == 'Distributie':
     st.plotly_chart(fig1,use_container_width=True)
         
 if rad == 'Uiteenzetting':
-    st.header('...')
+    st.header('Uiteeinzetting van de scheefstanden')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
