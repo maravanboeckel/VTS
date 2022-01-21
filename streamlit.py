@@ -52,6 +52,9 @@ if rad == 'Grafiek':
     st.plotly_chart(fig,use_container_width=True)
     
 if rad == 'Distributie':
+    st.header('...')
+    'Het is mogelijk om het historgram in te zoomen'
+
     fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
@@ -66,6 +69,8 @@ if rad == 'Distributie':
     st.plotly_chart(fig1,use_container_width=True)
         
 if rad == 'Uiteenzetting':
+    st.header('...')
+    'Het is mogelijk om de plot in te zoomen voor een gedetailleerdere plot'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
@@ -75,7 +80,8 @@ if rad == 'Uiteenzetting':
     st.plotly_chart(fig2,use_container_width=True)
 
 if rad == 'Kaart':
-    st.title('Kaart van (scheve) lantaarnpalen in Houten')
+    st.header('Kaart van (scheve) lantaarnpalen in Houten')
+ 
     
     col1, col2 = st.columns(2)
     with col1:
