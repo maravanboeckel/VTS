@@ -76,9 +76,11 @@ if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
     
     col1, col2 = st.columns(2)
-    col1.st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
-    col2.st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
-    
+    with col1:
+        st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
+    with col2:
+        st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
+        
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
             color = 'orange'
