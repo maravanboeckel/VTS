@@ -37,7 +37,7 @@ Houten=pd.read_csv('Houten.csv')
 
 if rad == 'Grafiek':
     st.header('Grafiek van de scheefstanden')
-    'Het is mogelijk om de grafiek in te zoomen'
+    'Het is mogelijk om de grafiek in te zoomen.'
     fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
               title='Scheefstand per lantaarnpaal gemeten met de waterpas en het algoritme', 
@@ -53,7 +53,7 @@ if rad == 'Grafiek':
     
 if rad == 'Distributie':
     st.header('...')
-    'Het is mogelijk om het historgram in te zoomen'
+    'Het is mogelijk om het historgram in te zoomen.'
 
     fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
@@ -70,7 +70,7 @@ if rad == 'Distributie':
         
 if rad == 'Uiteenzetting':
     st.header('...')
-    'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter'
+    'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
