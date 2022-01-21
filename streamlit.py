@@ -52,7 +52,7 @@ if rad == 'Kaart':
     with col1:
         st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
     with col2:
-        st.markdown("<h3 style='text-align: center;'>Algoritmes</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
     
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
@@ -219,4 +219,4 @@ if rad == 'Kaart':
     legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
                                colors=['darkred','red', 'orange', 'green'],
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
-    folium_static(map_houten, width = 1000, height = 750)
+    folium_static(map_houten, width = 1000, height = 750, use_container_width=True)
