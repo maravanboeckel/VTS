@@ -24,7 +24,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
+rad = st.sidebar.radio(options=('Grafiek van de scheefstanden','Distributie','Uitzetting?','Kaart'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
@@ -35,15 +35,42 @@ st.sidebar.markdown('#')
 
 Houten=pd.read_csv('Houten.csv')
 
-if rad == 'Grafiek':
-    st.title('Grafiek van de scheefstanden')
-  
-    fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],labels={
-        "value": "Scheefstand (graden)", 'variable':''},
-                  title='Scheefstand waterpas en algoritme')
+if rad == 'Grafiek van de scheefstanden':
+    fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
+              labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
+              title='Scheefstand per lantaarnpaal gemeten met de waterpas en het algoritme', 
+              color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
+    fig.update_layout(plot_bgcolor='#f0f1f1')
+
+    newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
+    fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
+                                      legendgroup = newnames[t.name],
+                                      hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
+
     st.plotly_chart(fig,use_container_width=True)
     
-    'NOG NIET COMPLEET'
+if rad == 'Distributie'
+    fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
+                  nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
+                  color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
+                  title='Distributie van de absolute scheefstand van lantaarnpalen')
+    fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+    fig1.update_xaxes(dtick=1)
+
+    newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
+    fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
+                                       legendgroup = newnames2[t.name],
+                                       hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
+    st.plotly_chart(fig1,use_container_width=True)
+        
+if rad == 'Uitzetting?'
+    fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
+                labels={'scheefstand':'Scheefstand elektronische waterpas (in graden)',
+                        'scheefstand_tov_kader':'Scheefstand algoritme (in graden)'},
+                color_discrete_sequence=['#d1534f'])
+    fig2.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
+    fig2.update_layout(plot_bgcolor='#f0f1f1',title_text='De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)', title_x=0.5)
+    st.plotly_chart(fig2,use_container_width=True)
 
 if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
