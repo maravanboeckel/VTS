@@ -32,6 +32,7 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
+st.sidebar.markdown('#')
 
 
 st.sidebar.subheader('Gemaakt door:')
