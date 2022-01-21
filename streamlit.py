@@ -6,6 +6,7 @@ import folium
 import streamlit as st
 from streamlit_folium import folium_static
 import plotly.express as px
+from PIL import Image
 
 st.set_page_config(layout="wide")
 
@@ -24,7 +25,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-rad = st.sidebar.radio(options=('Grafiek','Distributie','Uiteenzetting','Kaart'),label='Selecteer')
+rad = st.sidebar.radio(options=('Home','Grafiek','Distributie','Uiteenzetting','Kaart'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
@@ -34,6 +35,10 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
 Houten=pd.read_csv('Houten.csv')
+if rad == 'Home':
+    st.header('Project voor Velo Tech Solutions: Scheefstand bepalen van lantaarnpalen')
+    imghome = Image.open("HOUTEN20_houghlines.jpg")
+    st.image(imghome, width=800)
 
 if rad == 'Grafiek':
     st.header('Grafiek van de scheefstanden')
