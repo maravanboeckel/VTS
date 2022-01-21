@@ -17,7 +17,7 @@ st.sidebar.write('Rhode Rebel')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 
-Houten=pd.read_csv('Data_kaart.csv')
+Houten=pd.read_csv('Houten.csv')
 
 if rad == 'Grafiek':
     st.title('Grafiek van de scheefstanden')
