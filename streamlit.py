@@ -49,7 +49,7 @@ if rad == 'Grafiek van de scheefstanden':
 
     st.plotly_chart(fig,use_container_width=True)
     
-if rad == 'Distributie'
+if rad == 'Distributie':
     fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
@@ -63,7 +63,7 @@ if rad == 'Distributie'
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
     st.plotly_chart(fig1,use_container_width=True)
         
-if rad == 'Uitzetting?'
+if rad == 'Uitzetting?':
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (in graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (in graden)'},
