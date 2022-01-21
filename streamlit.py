@@ -9,7 +9,7 @@ import plotly.express as px
 
 st.set_page_config(layout="wide")
 from branca.element import Figure
-fig = Figure(width='70%', height='50%')
+fig2 = Figure(width='100%', height='100%')
 
 st.markdown(
     """
@@ -221,4 +221,5 @@ if rad == 'Kaart':
     legend_houten = add_categorical_legend(map_houten, 'Scheefstand',
                                colors=['darkred','red', 'orange', 'green'],
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
+    fig2.add_child(map_houten)
     folium_static(map_houten)
