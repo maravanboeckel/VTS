@@ -26,17 +26,16 @@ st.markdown(
 )
 
 rad = st.sidebar.radio(options=('Home','Grafiek','Distributie','Uiteenzetting','Kaart'),label='Selecteer')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
+st.sidebar.markdown('#')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
 st.sidebar.write('Rhodé Rebel')
-
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
 
 Houten=pd.read_csv('Houten.csv')
 if rad == 'Home':
@@ -47,7 +46,7 @@ if rad == 'Home':
 
     fiets = Image.open('fiets.jpg')
     col1.image(fiets, use_column_width=True)
-    fiets = Image.open('lantaarnpaal.jpg')
+    lantaarnpaal = Image.open('lantaarnpaal.jpg')
     col2.image(lantaarnpaal, use_column_width=True)
     
 #     imghome = Image.open("HOUTEN20_houghlines.jpg")
