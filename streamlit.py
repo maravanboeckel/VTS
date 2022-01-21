@@ -42,7 +42,7 @@ st.sidebar.write('Rhodé Rebel')
 Houten=pd.read_csv('Houten.csv')
 if rad == 'Home':
     st.header('Project voor Velo Tech Solutions:')
-    st.header('Scheefstand bepalen van lantaarnpalen')
+    st.header('De scheefstand bepalen van lantaarnpalen met een algoritme')
     imghome = Image.open("HOUTEN69.jpg")
     st.image(imghome, width=450)
 #     col1, col2 = st.columns(2)
