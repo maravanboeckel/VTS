@@ -28,7 +28,7 @@ rad = st.sidebar.radio(options=('Grafiek','Distributie','Uiteenzetting','Kaart')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
-st.sidebar.write('Rhode Rebel')
+st.sidebar.write('Rhodé Rebel')
 
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
@@ -76,10 +76,8 @@ if rad == 'Kaart':
     st.title('Kaart van (scheve) lantaarnpalen in Houten')
     
     col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
-    with col2:
-        st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
+    col1.st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
+    col2.st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
     
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
