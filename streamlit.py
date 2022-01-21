@@ -33,8 +33,7 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
-
-
+st.sidebar.markdown('#')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
