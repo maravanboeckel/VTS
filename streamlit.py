@@ -42,8 +42,16 @@ Houten=pd.read_csv('Houten.csv')
 if rad == 'Home':
     st.header('Project voor Velo Tech Solutions:')
     st.header('Scheefstand bepalen van lantaarnpalen')
-    imghome = Image.open("HOUTEN20_houghlines.jpg")
-    st.image(imghome, width=250)
+    
+    col1, col2 = st.columns(2)
+
+    fiets = Image.open('fiets.jpg')
+    col1.image(fiets, use_column_width=True)
+    fiets = Image.open('lantaarnpaal.jpg')
+    col2.image(lantaaarnpaal, use_column_width=True)
+    
+#     imghome = Image.open("HOUTEN20_houghlines.jpg")
+#     st.image(imghome, width=250)
 
 if rad == 'Grafiek':
     st.header('Grafiek van de scheefstanden')
