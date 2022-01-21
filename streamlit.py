@@ -32,8 +32,7 @@ st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
-st.sidebar.markdown('#')
-st.sidebar.markdown('#')
+
 
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
@@ -45,7 +44,7 @@ if rad == 'Home':
     st.header('Project voor Velo Tech Solutions:')
     st.header('Scheefstand bepalen van lantaarnpalen')
     imghome = Image.open("HOUTEN69.jpg")
-    st.image(imghome, width=250)
+    st.image(imghome, width=450)
 #     col1, col2 = st.columns(2)
 
 #     fiets = Image.open('fiets.jpg')
