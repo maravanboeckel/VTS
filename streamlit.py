@@ -70,7 +70,7 @@ if rad == 'Distributie':
         
 if rad == 'Uiteenzetting':
     st.header('...')
-    'Het is mogelijk om de plot in te zoomen voor een gedetailleerdere plot'
+    'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
