@@ -87,6 +87,8 @@ if rad == 'Uiteenzetting':
 
 if rad == 'Kaart':
     st.header('Kaart van (scheve) lantaarnpalen in Houten')
+    st.markdown('#')
+
  
     
     col1, col2 = st.columns(2)
