@@ -48,7 +48,7 @@ if rad == 'Home':
     fiets = Image.open('fiets.jpg')
     col1.image(fiets, use_column_width=True)
     fiets = Image.open('lantaarnpaal.jpg')
-    col2.image(lantaaarnpaal, use_column_width=True)
+    col2.image(lantaarnpaal, use_column_width=True)
     
 #     imghome = Image.open("HOUTEN20_houghlines.jpg")
 #     st.image(imghome, width=250)
