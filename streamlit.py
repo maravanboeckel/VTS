@@ -40,7 +40,7 @@ if rad == 'Home':
     
     st.header('Scheefstand bepalen van lantaarnpalen')
     imghome = Image.open("HOUTEN20_houghlines.jpg")
-    st.image(imghome, width=60)
+    st.image(imghome, width=150)
 
 if rad == 'Grafiek':
     st.header('Grafiek van de scheefstanden')
