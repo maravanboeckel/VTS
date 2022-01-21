@@ -65,8 +65,8 @@ if rad == 'Distributie':
         
 if rad == 'Uiteenzetting':
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
-                labels={'scheefstand':'Scheefstand elektronische waterpas (in graden)',
-                        'scheefstand_tov_kader':'Scheefstand algoritme (in graden)'},
+                labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
+                        'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
                 color_discrete_sequence=['#d1534f'])
     fig2.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
     fig2.update_layout(plot_bgcolor='#f0f1f1',title_text='De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)', title_x=0.5)
