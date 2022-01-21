@@ -89,7 +89,7 @@ if rad == 'Distributie':
     st.plotly_chart(fig1,use_container_width=True)
         
 if rad == 'Uiteenzetting':
-    st.header('Uiteeinzetting van de scheefstanden')
+    st.header('Uiteenzetting van de scheefstanden')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
