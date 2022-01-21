@@ -24,7 +24,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-rad = st.sidebar.radio(options=('Grafiek','Distributie','Uiteenzetting?','Kaart'),label='Selecteer')
+rad = st.sidebar.radio(options=('Grafiek','Distributie','Uiteenzetting','Kaart'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
 st.sidebar.write('Lisa Mulder')
@@ -63,7 +63,7 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
     st.plotly_chart(fig1,use_container_width=True)
         
-if rad == 'Uiteenzetting?':
+if rad == 'Uiteenzetting':
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (in graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (in graden)'},
