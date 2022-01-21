@@ -8,6 +8,22 @@ from streamlit_folium import folium_static
 import plotly.express as px
 
 st.set_page_config(layout="wide")
+
+st.markdown(
+    """
+    <style>
+    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child {
+        width: 260px;
+    }
+    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child {
+        width: 260px;
+        margin-left: -260px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 rad = st.sidebar.radio(options=('Grafiek','Kaart'),label='Selecteer')
 st.sidebar.subheader('Gemaakt door:')
 st.sidebar.write('Mara van Boeckel')
