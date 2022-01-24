@@ -107,9 +107,9 @@ if rad == 'Kaart':
     
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown("<h2 style='text-align: center;'>Elektronische waterpas</h2>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
     with col2:
-        st.markdown("<h2 style='text-align: center;'>Algoritme</h2>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
         
     def scheef(scheefstand):
         if  abs(scheefstand) >= 1 and scheefstand <3:
