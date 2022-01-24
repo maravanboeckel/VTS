@@ -48,11 +48,12 @@ if rad == 'Home':
 
 
 if rad == 'Grafiek':
-    st.header('Grafiek van de scheefstanden')
+    st.header('Grafieken van de scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme')
     'Het is mogelijk om de grafieken in te zoomen.'
     
     col_1, col_2 = st.columns(2)
     with col_1:
+        st.header('Voor de correctie')
         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
               title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme', 
@@ -67,6 +68,7 @@ if rad == 'Grafiek':
         st.plotly_chart(fig,use_column_width=True)
     
     with col_2:
+            st.header('Na de correctie')
             fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
             labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
             title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
