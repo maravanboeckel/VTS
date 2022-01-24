@@ -66,7 +66,7 @@ if rad == 'Grafiek':
 
         st.plotly_chart(fig,use_column_width=True)
     
-     with col_2:
+    with col_2:
             fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
             labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
             title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
