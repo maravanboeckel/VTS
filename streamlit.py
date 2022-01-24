@@ -148,6 +148,7 @@ if rad == 'Spreidingsdiagram':
 
 if rad == 'Kaart':
     st.header('Kaart van (scheve) lantaarnpalen in Houten')
+    'Het is mogelijk de kaarten in te zoomen. Als je op een lantaarnpaal klikt komt de informatie van de lantaarnpaal zichtbaar. 
     st.markdown('#')
     
     st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
