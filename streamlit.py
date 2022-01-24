@@ -25,7 +25,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-rad = st.sidebar.radio(options=('Home','Grafiek','Distributie','Uiteenzetting','Kaart'),label='Selecteer')
+rad = st.sidebar.radio(options=('Home','Grafiek','Distributie','Spreidingsdiagram','Kaart'),label='Selecteer')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
 st.sidebar.markdown('#')
@@ -41,7 +41,7 @@ st.sidebar.write('Rhodé Rebel')
 
 Houten=pd.read_csv('Houten.csv')
 if rad == 'Home':
-    st.header('Project voor Velo Tech Solutions:')
+    st.header('Project voor Velo Tech Solutions')
     st.header('De scheefstand bepalen van lantaarnpalen met een algoritme')
     imghome = Image.open("HOUTEN69.jpg")
     st.image(imghome, width=450)
@@ -88,7 +88,7 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
     st.plotly_chart(fig1,use_container_width=True)
         
-if rad == 'Uiteenzetting':
+if rad == 'Spreidingsdiagram':
     st.header('Uiteenzetting van de scheefstanden')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
