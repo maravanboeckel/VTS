@@ -54,7 +54,7 @@ if rad == 'Grafiek':
     
     col_1, col_2 = st.columns(2)
     with col_1:
-        <div style="text-align: center"> Voor de correctie </div>
+        st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
         #st.header('Voor de correctie')
         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
