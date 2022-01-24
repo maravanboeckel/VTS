@@ -84,15 +84,15 @@ if rad == 'Grafiek':
             st.plotly_chart(fig5,use_column_width=True)
                 
 if rad == 'Distributie':
-    st.header('Distributie van de scheefstanden')
+    st.header('Distributie van de absolute scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
     col_3, col_4 = st.columns(2)
     with col_3:
+        st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
 
         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
-                  color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
-                  title='Distributie van de absolute scheefstand van lantaarnpalen')
+                  color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'})
         fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
         fig1.update_xaxes(dtick=1)
 
@@ -103,10 +103,11 @@ if rad == 'Distributie':
         st.plotly_chart(fig1,use_column_width=True)
         
     with col_4:
+        st.markdown("<h3 style='text-align: center;'>Na de correctie</h3>", unsafe_allow_html=True)
+
         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
-                                color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'},
-                                title='Distributie van de absolute scheefstand van lantaarnpalen na correctie')
+                                color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'})
         fig6.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
         fig6.update_xaxes(dtick=1)
         newnames4 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'AL_na_corr_abs': 'Scheefstand algoritme na correctie'}
@@ -114,6 +115,8 @@ if rad == 'Distributie':
                                        legendgroup = newnames4[t.name],
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
         st.plotly_chart(fig6,use_column_width=True)
+        
+        
 if rad == 'Spreidingsdiagram':
     st.header('Uiteenzetting van de scheefstanden')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
