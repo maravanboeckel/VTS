@@ -86,20 +86,35 @@ if rad == 'Grafiek':
 if rad == 'Distributie':
     st.header('Distributie van de scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
+    col_3, col_4 = st.columns(2)
+    with col_3:
 
-    fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
+        fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
                   title='Distributie van de absolute scheefstand van lantaarnpalen')
-    fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
-    fig1.update_xaxes(dtick=1)
+        fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+        fig1.update_xaxes(dtick=1)
 
-    newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
-    fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
+        newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
+        fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
                                        legendgroup = newnames2[t.name],
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
-    st.plotly_chart(fig1,use_container_width=True)
+        st.plotly_chart(fig1,use_container_width=True)
         
+         with col_3:
+                fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
+                                  nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
+                                color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'},
+                                title='Distributie van de absolute scheefstand van lantaarnpalen na correctie')
+                fig6.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+                fig6.update_xaxes(dtick=1)
+                st.plotly_chart(fig,use_container_width=True)
+
+newnames4 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'AL_na_corr_abs': 'Scheefstand algoritme na correctie'}
+fig6.for_each_trace(lambda t: t.update(name = newnames4[t.name],
+                                       legendgroup = newnames4[t.name],
+                                       hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
 if rad == 'Spreidingsdiagram':
     st.header('Uiteenzetting van de scheefstanden')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
