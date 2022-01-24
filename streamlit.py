@@ -72,10 +72,10 @@ if rad == 'Grafiek':
             title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
             color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
             hover_name="lantaarnpaal_nummer")
-            fig5.update_layout(plot_bgcolor='#f0f1f1')
-
+            fig5.update_layout(title_x=0.5,plot_bgcolor='#f0f1f1')
+            
             newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
-            fig5.for_each_trace(title_x=0.5,lambda t: t.update(name = newnames3[t.name],
+            fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
                                       legendgroup = newnames3[t.name],
                                       hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
             st.plotly_chart(fig5,use_column_width=True)
@@ -88,7 +88,7 @@ if rad == 'Distributie':
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
                   title='Distributie van de absolute scheefstand van lantaarnpalen')
-    fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+    fig1.update_layout(title_x=0.5,barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
     fig1.update_xaxes(dtick=1)
 
     newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
