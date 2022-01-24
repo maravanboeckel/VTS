@@ -45,32 +45,41 @@ if rad == 'Home':
     st.header('De scheefstand bepalen van lantaarnpalen met een algoritme')
     imghome = Image.open("HOUTEN69.jpg")
     st.image(imghome, width=450)
-#     col1, col2 = st.columns(2)
 
-#     fiets = Image.open('fiets.jpg')
-#     col1.image(fiets, use_column_width=True)
-#     lantaarnpaal = Image.open('lantaarnpaal.jpg')
-#     col2.image(lantaarnpaal, use_column_width=True)
-    
-#     imghome = Image.open("HOUTEN20_houghlines.jpg")
-#     st.image(imghome, width=250)
 
 if rad == 'Grafiek':
     st.header('Grafiek van de scheefstanden')
-    'Het is mogelijk om de grafiek in te zoomen.'
-    fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
+    'Het is mogelijk om de grafieken in te zoomen.'
+    
+    col_1, col_2 = st.columns(2)
+    with col_1:
+        fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
               title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme', 
               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-    fig.update_layout(plot_bgcolor='#f0f1f1')
+        fig.update_layout(plot_bgcolor='#f0f1f1')
 
-    newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
-    fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
+        newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
+        fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
                                       legendgroup = newnames[t.name],
                                       hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
 
-    st.plotly_chart(fig,use_container_width=True)
+        st.plotly_chart(fig,use_column_width=True)
     
+     with col_2:
+            fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
+            labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
+            title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
+            color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
+            hover_name="lantaarnpaal_nummer")
+            fig5.update_layout(plot_bgcolor='#f0f1f1')
+
+            newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
+            fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
+                                      legendgroup = newnames3[t.name],
+                                      hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
+             st.plotly_chart(fig5,use_column_width=True)
+                
 if rad == 'Distributie':
     st.header('Distributie van de scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
