@@ -137,7 +137,7 @@ if rad == 'Spreidingsdiagram':
     
         fig7 = px.scatter(Houten,x='scheefstand',y='AL_na_corr',
                  labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
-                         'AL_na_corr':'Scheefstand algoritme na correctie (graden)'},
+                         'AL_na_corr':'Scheefstand algoritme (graden)'},
                  color_discrete_sequence=['#d1534f'],
                  hover_name="lantaarnpaal_nummer")
         fig7.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
