@@ -57,7 +57,7 @@ if rad == 'Grafiek':
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
               title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme', 
               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-        fig.update_layout(plot_bgcolor='#f0f1f1')
+        fig.update_layout(title_x=0.3,plot_bgcolor='#f0f1f1')
 
         newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
         fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
@@ -72,7 +72,7 @@ if rad == 'Grafiek':
             title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
             color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
             hover_name="lantaarnpaal_nummer")
-            fig5.update_layout(title_x=0.5,plot_bgcolor='#f0f1f1')
+            fig5.update_layout(title_x=0.3,plot_bgcolor='#f0f1f1')
             
             newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
             fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
@@ -88,7 +88,7 @@ if rad == 'Distributie':
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'},
                   title='Distributie van de absolute scheefstand van lantaarnpalen')
-    fig1.update_layout(title_x=0.5,barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+    fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
     fig1.update_xaxes(dtick=1)
 
     newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
