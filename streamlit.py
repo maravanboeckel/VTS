@@ -340,7 +340,8 @@ if rad == 'Kaart':
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
     folium_static(map_houten, width = 1150, height = 750)
     
-    st.header('Na de correctie')
+    st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
+    
     col3, col4 = st.columns(2)
     with col3:
         st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
