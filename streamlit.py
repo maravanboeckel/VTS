@@ -149,7 +149,8 @@ if rad == 'Spreidingsdiagram':
 if rad == 'Kaart':
     st.header('Kaart van (scheve) lantaarnpalen in Houten')
     st.markdown('#')
-
+    
+    st.header('Voor de correctie')
  
     
     col1, col2 = st.columns(2)
@@ -339,7 +340,7 @@ if rad == 'Kaart':
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
     folium_static(map_houten, width = 1150, height = 750)
     
-    
+    st.header('Na de correctie')
     map_houten1= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
     tooltip = "Klik voor informatie"
 
