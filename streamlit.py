@@ -103,7 +103,7 @@ if rad == 'Distributie':
         st.plotly_chart(fig1,use_column_width=True)
         
     with col_4:
-        st.markdown("<h2 style='text-align: center;'>Na de correctie</h2>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
