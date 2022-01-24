@@ -185,6 +185,20 @@ if rad == 'Kaart':
         else:
             color = 'green'
             return color
+        
+    def scheef2(AL_na_corr):
+        if  abs(AL_na_corr) >= 1 and AL_na_corr <3:
+            color = 'orange'
+            return color
+        elif abs(AL_na_corr) >= 3 and AL_na_corr < 6:
+            color='red'
+            return color
+        elif abs(AL_na_corr) >=6:
+            color = 'darkred'
+            return color
+        else:
+            color = 'green'
+            return color
 
     # Toevoegen van een categorische legenda
     # (bron: https://stackoverflow.com/questions/65042654/how-to-add-categorical-legend-to-python-folium-map)
@@ -315,7 +329,7 @@ if rad == 'Kaart':
                  'Scheefstand: '+ str(round(row_values['scheefstand_tov_kader'],2))+'°'+'</strong>'+'<br>'+'<br>'+
                 'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])   )
 
-        marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef(row_values['scheefstand_tov_kader']))
+        marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef1(row_values['scheefstand_tov_kader']), fill_color=scheef1(row_values['scheefstand_tov_kader']))
         marker.add_to(algoritme)
         algoritme.add_to(map_houten.m2)
 
@@ -324,3 +338,40 @@ if rad == 'Kaart':
                                colors=['darkred','red', 'orange', 'green'],
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
     folium_static(map_houten, width = 1150, height = 750)
+    
+    
+    map_houten1= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
+    tooltip = "Klik voor informatie"
+
+    waterpas= folium.FeatureGroup(name='Scheefstand elektronische waterpas',show=False)
+    algoritme= folium.FeatureGroup(name='Scheefstand algoritme',show=True)
+
+
+    for row in Houten.iterrows():
+        row_values = row[1]
+        location = [row_values['lat'], row_values['lon']]
+        popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+                 'Scheefstand: '+ str(round(row_values['scheefstand'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+                'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])    )
+
+        marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef(row_values['scheefstand']), fill_color=scheef(row_values['scheefstand']))
+        marker.add_to(waterpas)
+        waterpas.add_to(map_houten1.m1)
+
+
+    for row in Houten.iterrows():
+        row_values = row[1]
+        location = [row_values['lat'], row_values['lon']]
+        popup = ('Fotonummer:'+' '+ row_values['lantaarnpaal_nummer']+'<strong>'+'<br>'+'<br>'+
+                 'Scheefstand: '+ str(round(row_values['AL_na_corr'],2))+'°'+'</strong>'+'<br>'+'<br>'+
+                'Lat, lon: '+str(row_values['lat'])+',' + '<br>' + str(row_values['lon'])   )
+
+        marker = folium.CircleMarker(location = location,popup=popup,tooltip=tooltip,color=scheef2(row_values['AL_na_corr']), fill_color=scheef2(row_values['AL_na_corr']))
+        marker.add_to(algoritme)
+        algoritme.add_to(map_houten1.m2)
+
+    #folium.LayerControl(position='topleft').add_to(map_houten)
+    legend_houten = add_categorical_legend(map_houten1, 'Scheefstand',
+                               colors=['darkred','red', 'orange', 'green'],
+                               labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
+    folium_static(map_houten1, width = 1150, height = 750)
