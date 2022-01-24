@@ -150,7 +150,7 @@ if rad == 'Kaart':
     st.header('Kaart van (scheve) lantaarnpalen in Houten')
     st.markdown('#')
     
-    st.markdown("<h2.5 style='text-align: center;'>Voor de correctie</h2.5>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
  
     
     col1, col2 = st.columns(2)
@@ -340,7 +340,7 @@ if rad == 'Kaart':
                                labels=['Meer dan 6°', 'Tussen 3° en 6°', 'Tussen 1° en 3°', 'Minder dan 1°'])
     folium_static(map_houten, width = 1150, height = 750)
     
-    st.markdown("<h2 style='text-align: center;'>Na de correctie</h2>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>Na de correctie</h3>", unsafe_allow_html=True)
     
     col3, col4 = st.columns(2)
     with col3:
