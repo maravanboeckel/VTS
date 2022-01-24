@@ -78,7 +78,7 @@ if rad == 'Grafiek':
             fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
                                       legendgroup = newnames3[t.name],
                                       hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
-             st.plotly_chart(fig5,use_column_width=True)
+            st.plotly_chart(fig5,use_column_width=True)
                 
 if rad == 'Distributie':
     st.header('Distributie van de scheefstanden')
