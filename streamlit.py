@@ -49,7 +49,7 @@ if rad == 'Home':
 
 if rad == 'Grafiek':
     st.header('Grafieken van de scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme')
-    'Het is mogelijk om de grafieken in te zoomen.'
+    'Als correctie wordt de gemiddelde fout van 0,84⁰ van de scheefstand van het algoritme afgehaald. Het is mogelijk om de grafieken in te zoomen.'
     
     col_1, col_2 = st.columns(2)
     with col_1:
