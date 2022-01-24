@@ -75,7 +75,7 @@ if rad == 'Grafiek':
             fig5.update_layout(plot_bgcolor='#f0f1f1')
 
             newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
-            fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
+            fig5.for_each_trace(title_x=0.5,lambda t: t.update(name = newnames3[t.name],
                                       legendgroup = newnames3[t.name],
                                       hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
             st.plotly_chart(fig5,use_column_width=True)
