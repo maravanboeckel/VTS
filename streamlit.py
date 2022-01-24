@@ -71,7 +71,6 @@ if rad == 'Grafiek':
             st.header('     Na de correctie')
             fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
             labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
-            title='Scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme na correctie', 
             color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
             hover_name="lantaarnpaal_nummer")
             fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
