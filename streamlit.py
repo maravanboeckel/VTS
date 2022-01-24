@@ -118,20 +118,22 @@ if rad == 'Distributie':
         
         
 if rad == 'Spreidingsdiagram':
-    st.header('Uiteenzetting van de scheefstanden')
+    st.header('De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     col_5, col_6 = st.columns(2)
     with col_5:
+        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
     
         fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
                         'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
                 color_discrete_sequence=['#d1534f'])
         fig2.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
-        fig2.update_layout(plot_bgcolor='#f0f1f1',title_text='De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)', title_x=0.5)
+        fig2.update_layout(plot_bgcolor='#f0f1f1')
         st.plotly_chart(fig2,use_column_width=True)
         
     with col_6:
+        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
     
         fig7 = px.scatter(Houten,x='scheefstand',y='AL_na_corr',
                  labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
@@ -139,9 +141,7 @@ if rad == 'Spreidingsdiagram':
                  color_discrete_sequence=['#d1534f'],
                  hover_name="lantaarnpaal_nummer")
         fig7.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
-        fig7.update_layout(plot_bgcolor='#f0f1f1',
-                   title_text='De scheefstand van de elektronische waterpas uitgezet tegen<br> de scheefstand van het algoritme (per lantaarnpaal) na correctie',
-                   title_x=0.5)
+        fig7.update_layout(plot_bgcolor='#f0f1f1')
         st.plotly_chart(fig7,use_column_width=True)
 
 
