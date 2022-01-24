@@ -341,6 +341,11 @@ if rad == 'Kaart':
     folium_static(map_houten, width = 1150, height = 750)
     
     st.header('Na de correctie')
+    col3, col4 = st.columns(2)
+    with col3:
+        st.markdown("<h3 style='text-align: center;'>Elektronische waterpas</h3>", unsafe_allow_html=True)
+    with col4:
+        st.markdown("<h3 style='text-align: center;'>Algoritme</h3>", unsafe_allow_html=True)
     map_houten1= folium.plugins.DualMap(location=[52.015154,5.171879], zoom_start = 15)
     tooltip = "Klik voor informatie"
 
