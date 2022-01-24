@@ -55,7 +55,7 @@ if rad == 'Grafiek':
     col_1, col_2 = st.columns(2)
     with col_1:
         st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
-        #st.header('Voor de correctie')
+        
         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
@@ -69,7 +69,8 @@ if rad == 'Grafiek':
         st.plotly_chart(fig,use_column_width=True)
     
     with col_2:
-            st.header('     Na de correctie')
+            st.markdown("<h3 style='text-align: center;'>Na de correctie</h3>", unsafe_allow_html=True)
+
             fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
             labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
             color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
