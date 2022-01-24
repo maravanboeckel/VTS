@@ -102,7 +102,7 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
         st.plotly_chart(fig1,use_column_width=True)
         
-    with col_3:
+    with col_4:
                 fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                                 color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'},
