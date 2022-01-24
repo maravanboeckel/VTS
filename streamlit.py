@@ -54,7 +54,7 @@ if rad == 'Grafiek':
     
     col_1, col_2 = st.columns(2)
     with col_1:
-        st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         
         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
@@ -69,7 +69,7 @@ if rad == 'Grafiek':
         st.plotly_chart(fig,use_column_width=True)
     
     with col_2:
-            st.markdown("<h3 style='text-align: center;'>Na de correctie</h3>", unsafe_allow_html=True)
+            st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
             fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
             labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
@@ -88,7 +88,7 @@ if rad == 'Distributie':
     'Het is mogelijk om het historgram in te zoomen.'
     col_3, col_4 = st.columns(2)
     with col_3:
-        st.markdown("<h3 style='text-align: center;'>Voor de correctie</h3>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
 
         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
