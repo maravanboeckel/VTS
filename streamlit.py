@@ -150,7 +150,7 @@ if rad == 'Kaart':
     st.header('Kaart van (scheve) lantaarnpalen in Houten')
     st.markdown('#')
     
-    st.markdown("<h2 style='text-align: center;'>Na de correctie</h2>", unsafe_allow_html=True)
+    st.markdown("<h2.5 style='text-align: center;'>Voor de correctie</h2.5>", unsafe_allow_html=True)
  
     
     col1, col2 = st.columns(2)
