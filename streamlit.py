@@ -100,7 +100,7 @@ if rad == 'Distributie':
         fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
                                        legendgroup = newnames2[t.name],
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
-        st.plotly_chart(fig1,use_container_width=True)
+        st.plotly_chart(fig1,use_column_width=True)
         
     with col_3:
                 fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
@@ -109,7 +109,7 @@ if rad == 'Distributie':
                                 title='Distributie van de absolute scheefstand van lantaarnpalen na correctie')
                 fig6.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
                 fig6.update_xaxes(dtick=1)
-                st.plotly_chart(fig,use_container_width=True)
+                st.plotly_chart(fig6,use_column_width=True)
 
 newnames4 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'AL_na_corr_abs': 'Scheefstand algoritme na correctie'}
 fig6.for_each_trace(lambda t: t.update(name = newnames4[t.name],
