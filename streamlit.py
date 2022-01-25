@@ -88,10 +88,9 @@ if rad == 'Grafiek':
 if rad == 'Distributie':
     st.header('Distributie van de absolute scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
-    col_3, col_4 = st.columns(2)
-    with col_3:
-        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
-
+      col_2, col_3, col_4 = st.columns([3,0.3,3])
+        with col_2:
+            st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'})
@@ -104,8 +103,10 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
         st.plotly_chart(fig1,use_column_width=True)
         
-    with col_4:
-        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
+        with col_3:
+            st.markdown('')
+        with col_4:
+            st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
@@ -117,6 +118,39 @@ if rad == 'Distributie':
                                        legendgroup = newnames4[t.name],
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
         st.plotly_chart(fig6,use_column_width=True)
+        
+            
+            
+            
+#     col_3, col_4 = st.columns(2)
+#     with col_3:
+#         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
+
+#         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
+#                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
+#                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'})
+#         fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+#         fig1.update_xaxes(dtick=1)
+
+#         newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
+#         fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
+#                                        legendgroup = newnames2[t.name],
+#                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
+#         st.plotly_chart(fig1,use_column_width=True)
+        
+#     with col_4:
+#         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
+
+#         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
+#                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
+#                                 color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'})
+#         fig6.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
+#         fig6.update_xaxes(dtick=1)
+#         newnames4 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'AL_na_corr_abs': 'Scheefstand algoritme na correctie'}
+#         fig6.for_each_trace(lambda t: t.update(name = newnames4[t.name],
+#                                        legendgroup = newnames4[t.name],
+#                                        hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
+#         st.plotly_chart(fig6,use_column_width=True)
         
         
 if rad == 'Spreidingsdiagram':
