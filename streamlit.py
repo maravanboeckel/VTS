@@ -72,6 +72,7 @@ if rad == 'Grafiek':
         
     with col_1a:
         st.markdown('')
+        
     with col_2:
          st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
