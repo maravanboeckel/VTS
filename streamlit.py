@@ -90,7 +90,7 @@ if rad == 'Distributie':
     'Het is mogelijk om het historgram in te zoomen.'
     col_2, col_3, col_4 = st.columns([3,0.3,3])
     with col_2:
-            st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'})
