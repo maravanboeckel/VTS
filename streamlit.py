@@ -122,7 +122,7 @@ if rad == 'Distributie':
 if rad == 'Spreidingsdiagram':
     st.header('De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)')
     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
-    col_5, col_6, col_7 = st.columns([3,1,3])
+    col_5, col_6, col_7 = st.columns([3,0.5,3])
     with col_5:
         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
     
