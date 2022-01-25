@@ -54,47 +54,14 @@ if rad == 'Grafiek':
     'Het is mogelijk om de grafieken in te zoomen.'
     st.markdown('#')
     
-    col_1, col_1a, col2 = st.columns([3,0.3,3])
-    with col_1:
-        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
-        
-        fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
-              labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
-              color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-        fig.update_layout(plot_bgcolor='#f0f1f1')
-
-        newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
-        fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
-                                      legendgroup = newnames[t.name],
-                                      hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
-
-        st.plotly_chart(fig,use_column_width=True)
-        
-    with col_1a:
-        st.markdown('')
-        
-    with col_2:
-        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-        fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
-        labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
-        color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
-        hover_name="lantaarnpaal_nummer")
-        fig5.update_layout(plot_bgcolor='#f0f1f1')
-
-        newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
-        fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
-                                  legendgroup = newnames3[t.name],
-                                  hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
-        st.plotly_chart(fig5,use_column_width=True)
-        
-#     col_1, col_2 = st.columns(2)
+#     col_1, col_1a, col2 = st.columns([3,0.3,3])
 #     with col_1:
 #         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         
 #         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
 #               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
 #               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-#         fig.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+#         fig.update_layout(plot_bgcolor='#f0f1f1')
 
 #         newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
 #         fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
@@ -102,21 +69,54 @@ if rad == 'Grafiek':
 #                                       hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
 
 #         st.plotly_chart(fig,use_column_width=True)
-    
+        
+#     with col_1a:
+#         st.markdown('')
+        
 #     with col_2:
 #         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-
 #         fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
 #         labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
 #         color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
 #         hover_name="lantaarnpaal_nummer")
-#         fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+#         fig5.update_layout(plot_bgcolor='#f0f1f1')
 
 #         newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
 #         fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
 #                                   legendgroup = newnames3[t.name],
 #                                   hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
 #         st.plotly_chart(fig5,use_column_width=True)
+        
+    col_1, col_2 = st.columns(2)
+    with col_1:
+        st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
+        
+        fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
+              labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
+              color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
+        fig.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+
+        newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
+        fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
+                                      legendgroup = newnames[t.name],
+                                      hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
+
+        st.plotly_chart(fig,use_column_width=True)
+    
+    with col_2:
+        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
+
+        fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
+        labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
+        color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
+        hover_name="lantaarnpaal_nummer")
+        fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+
+        newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
+        fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
+                                  legendgroup = newnames3[t.name],
+                                  hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
+        st.plotly_chart(fig5,use_column_width=True)
                 
 if rad == 'Distributie':
     st.header('Distributie van de absolute scheefstanden')
