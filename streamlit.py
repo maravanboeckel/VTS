@@ -103,9 +103,9 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
         st.plotly_chart(fig1,use_column_width=True)
         
-      with col_3:
+    with col_3:
         st.markdown('')
-      with col_4:
+    with col_4:
         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
