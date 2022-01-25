@@ -70,7 +70,7 @@ if rad == 'Grafiek':
 
         st.plotly_chart(fig,use_column_width=True)
         
-     with col_1a:
+    with col_1a:
         st.markdown('')
     with col_2:
          st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
