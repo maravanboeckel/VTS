@@ -54,7 +54,7 @@ if rad == 'Grafiek':
     'Het is mogelijk om de grafieken in te zoomen.'
     st.markdown('#')
     
-    col_1, col_1a, col24 = st.columns([3,0.3,3])
+    col_1, col_1a, col2 = st.columns([3,0.3,3])
     with col_1:
         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         
