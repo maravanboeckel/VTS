@@ -89,7 +89,7 @@ if rad == 'Distributie':
     st.header('Distributie van de absolute scheefstanden')
     'Het is mogelijk om het historgram in te zoomen.'
     col_2, col_3, col_4 = st.columns([3,0.3,3])
-        with col_2:
+    with col_2:
             st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
@@ -103,9 +103,9 @@ if rad == 'Distributie':
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
         st.plotly_chart(fig1,use_column_width=True)
         
-        with col_3:
+      with col_3:
             st.markdown('')
-        with col_4:
+      with col_4:
             st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
