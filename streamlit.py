@@ -61,7 +61,7 @@ if rad == 'Grafiek':
         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-        fig.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+        fig.update_layout(plot_bgcolor='#f0f1f1')
 
         newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
         fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
@@ -79,7 +79,7 @@ if rad == 'Grafiek':
         labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
         color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
         hover_name="lantaarnpaal_nummer")
-        fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+        fig5.update_layout(plot_bgcolor='#f0f1f1')
 
         newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
         fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
