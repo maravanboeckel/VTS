@@ -71,19 +71,19 @@ if rad == 'Grafiek':
         st.plotly_chart(fig,use_column_width=True)
     
     with col_2:
-            st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
 
-            fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
-            labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
-            color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
-            hover_name="lantaarnpaal_nummer")
-            fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
-            
-            newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
-            fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
-                                      legendgroup = newnames3[t.name],
-                                      hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
-            st.plotly_chart(fig5,use_column_width=True)
+        fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
+        labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
+        color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
+        hover_name="lantaarnpaal_nummer")
+        fig5.update_layout(title_x=0.8,plot_bgcolor='#f0f1f1')
+
+        newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
+        fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
+                                  legendgroup = newnames3[t.name],
+                                  hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
+        st.plotly_chart(fig5,use_column_width=True)
                 
 if rad == 'Distributie':
     st.header('Distributie van de absolute scheefstanden')
