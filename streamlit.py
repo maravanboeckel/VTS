@@ -75,7 +75,6 @@ if rad == 'Grafiek':
         
     with col_2:
         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-
         fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
         labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
         color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
