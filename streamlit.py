@@ -188,7 +188,8 @@ if rad == 'Distributie':
         
 if rad == 'Spreidingsdiagram':
     st.header('De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)')
-    'De blauwe lijn die te zien is in de plot geeft de lijn' st.latex(r'''
+    'De blauwe lijn die te zien is in de plot geeft de lijn' 
+    st.latex(r'''
     y=x
      ''')
     'weer. Dit is de lijn die ontstaat als de scheefstand van de elektronische waterpas altijd gelijk is aan het algoritme. De oranje punten zijn de waargenomen scheefstanden.'
