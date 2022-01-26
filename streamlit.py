@@ -49,43 +49,11 @@ if rad == 'Home':
 
 if rad == 'Grafiek':
     st.header('Grafieken van de scheefstand per lantaarnpaal gemeten met de elektronische waterpas en het algoritme')
-    'Als er een - staat voor de scheefstand betekent dat de lantaarnpaal naar rechts scheef staat. Bij positief getal is de lantaarnpaal scheef naar links'
+    'Als er een - staat voor de scheefstand betekent dat de lantaarnpaal naar rechts scheef staat. Bij positief getal is de lantaarnpaal scheef naar links.'
     'Als correctie wordt de gemiddelde fout van 0,84⁰ van de scheefstand van het algoritme afgehaald.'
     'Het is mogelijk om de grafieken in te zoomen.'
     st.markdown('#')
-    
-#     col_1, col_1a, col2 = st.columns([3,0.3,3])
-#     with col_1:
-#         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
-        
-#         fig = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","scheefstand_tov_kader"],
-#               labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'}, 
-#               color_discrete_map={'scheefstand': '#4160ad','scheefstand_tov_kader': '#d1534f'})
-#         fig.update_layout(plot_bgcolor='#f0f1f1')
 
-#         newnames = {'scheefstand':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader': 'Scheefstand algoritme'}
-#         fig.for_each_trace(lambda t: t.update(name = newnames[t.name],
-#                                       legendgroup = newnames[t.name],
-#                                       hovertemplate = t.hovertemplate.replace(t.name, newnames[t.name])))
-
-#         st.plotly_chart(fig,use_column_width=True)
-        
-#     with col_1a:
-#         st.markdown('')
-        
-#     with col_2:
-#         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-#         fig5 = px.line(Houten, x="lantaarnpaal_nummer", y=["scheefstand","AL_na_corr"],
-#         labels={"value": "Scheefstand (graden)", 'variable':'','lantaarnpaal_nummer':'Lantaarnpaal'},
-#         color_discrete_map={'scheefstand': '#4160ad','AL_na_corr': '#d1534f'},
-#         hover_name="lantaarnpaal_nummer")
-#         fig5.update_layout(plot_bgcolor='#f0f1f1')
-
-#         newnames3 = {'scheefstand':'Scheefstand elektronische waterpas', 'AL_na_corr': 'Scheefstand algoritme na correctie'}
-#         fig5.for_each_trace(lambda t: t.update(name = newnames3[t.name],
-#                                   legendgroup = newnames3[t.name],
-#                                   hovertemplate = t.hovertemplate.replace(t.name, newnames3[t.name])))
-#         st.plotly_chart(fig5,use_column_width=True)
         
     col_1, col_2 = st.columns(2)
     with col_1:
@@ -151,39 +119,7 @@ if rad == 'Distributie':
                                        legendgroup = newnames4[t.name],
                                        hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
         st.plotly_chart(fig6,use_column_width=True)
-        
-            
-            
-            
-#     col_3, col_4 = st.columns(2)
-#     with col_3:
-#         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
-
-#         fig1=px.histogram(Houten, x=["scheefstand_abs","scheefstand_tov_kader_abs"],
-#                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
-#                   color_discrete_map={'scheefstand_abs': '#4160ad','scheefstand_tov_kader_abs': '#d1534f'})
-#         fig1.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
-#         fig1.update_xaxes(dtick=1)
-
-#         newnames2 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'scheefstand_tov_kader_abs': 'Scheefstand algoritme'}
-#         fig1.for_each_trace(lambda t: t.update(name = newnames2[t.name],
-#                                        legendgroup = newnames2[t.name],
-#                                        hovertemplate = t.hovertemplate.replace(t.name, newnames2[t.name])))
-#         st.plotly_chart(fig1,use_column_width=True)
-        
-#     with col_4:
-#         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-
-#         fig6=px.histogram(Houten, x=["scheefstand_abs","AL_na_corr_abs"],
-#                                   nbins=17, labels={'value':'Scheefstand absoluut (graden)', 'variable':''},
-#                                 color_discrete_map={'scheefstand_abs': '#4160ad','AL_na_corr_abs': '#d1534f'})
-#         fig6.update_layout(barmode='group',yaxis_title_text='Frequentie',plot_bgcolor='#f0f1f1')
-#         fig6.update_xaxes(dtick=1)
-#         newnames4 = {'scheefstand_abs':'Scheefstand elektronische waterpas', 'AL_na_corr_abs': 'Scheefstand algoritme na correctie'}
-#         fig6.for_each_trace(lambda t: t.update(name = newnames4[t.name],
-#                                        legendgroup = newnames4[t.name],
-#                                        hovertemplate = t.hovertemplate.replace(t.name, newnames4[t.name])))   
-#         st.plotly_chart(fig6,use_column_width=True)
+   
         
         
 if rad == 'Spreidingsdiagram':
@@ -215,30 +151,6 @@ if rad == 'Spreidingsdiagram':
         fig7.update_layout(plot_bgcolor='#f0f1f1')
         st.plotly_chart(fig7,use_column_width=True)
         
-    
-#     col_5, col_6 = st.columns(2)
-#     with col_5:
-#         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
-    
-#         fig2=px.scatter(Houten,x='scheefstand',y='scheefstand_tov_kader',
-#                 labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
-#                         'scheefstand_tov_kader':'Scheefstand algoritme (graden)'},
-#                 color_discrete_sequence=['#d1534f'])
-#         fig2.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
-#         fig2.update_layout(plot_bgcolor='#f0f1f1')
-#         st.plotly_chart(fig2,use_column_width=True)
-        
-#     with col_6:
-#         st.markdown("<h4 style='text-align: center;'>Na de correctie</h4>", unsafe_allow_html=True)
-    
-#         fig7 = px.scatter(Houten,x='scheefstand',y='AL_na_corr',
-#                  labels={'scheefstand':'Scheefstand elektronische waterpas (graden)',
-#                          'AL_na_corr':'Scheefstand algoritme (graden)'},
-#                  color_discrete_sequence=['#d1534f'],
-#                  hover_name="lantaarnpaal_nummer")
-#         fig7.add_shape(type='line', x0=-7, y0=-7, x1=18, y1=18, line=dict(color='#4160ad'))
-#         fig7.update_layout(plot_bgcolor='#f0f1f1')
-#         st.plotly_chart(fig7,use_column_width=True)
 
 
 if rad == 'Kaart':
