@@ -188,11 +188,11 @@ if rad == 'Distributie':
         
 if rad == 'Spreidingsdiagram':
     st.header('De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)')
-    st.latex(r'''
+    'De blauwe lijn die te zien is in de plot geeft de lijn' st.latex(r'''
     y=x
      ''')
-#     'De blauwe lijn die te zien is in de plot geeft de lijn' st.latex("y=x")'weer. Dit is de lijn die ontstaat als de scheefstand van de elektronische waterpas altijd gelijk is aan het algoritme. De oranje punten zijn de waargenomen scheefstanden.'
-#     'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
+    'weer. Dit is de lijn die ontstaat als de scheefstand van de elektronische waterpas altijd gelijk is aan het algoritme. De oranje punten zijn de waargenomen scheefstanden.'
+    'Het is mogelijk om de plot in te zoomen voor een plot zonder uitschieter.'
     col_5, col_6, col_7 = st.columns([3,0.3,3])
     with col_5:
         st.markdown("<h4 style='text-align: center;'>Voor de correctie</h4>", unsafe_allow_html=True)
