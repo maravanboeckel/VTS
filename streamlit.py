@@ -188,7 +188,7 @@ if rad == 'Distributie':
         
 if rad == 'Spreidingsdiagram':
     st.header('De scheefstand van de elektronische waterpas uitgezet tegen de scheefstand van het algoritme (per lantaarnpaal)')
-    'De blauwe lijn die te zien is in de plot geeft de lijn' 
+    st.text("De blauwe lijn die te zien is in de plot geeft de lijn")
     st.latex(r'''
     y=x
      ''')
